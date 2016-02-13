@@ -62,7 +62,7 @@ For this directory tree:
       - config.json
       - run.json
 
-path values should be set as follow:
+path values should be set as follows:
 
     "source": "src"
     "target": "bin"
@@ -80,7 +80,7 @@ will change v1.2.4 to v1.3.0.
 
 ## Accessing config in application
 
-Contents of `application` hash from `config.json can be accessed by:
+Contents of `application` hash from `config.json` can be accessed by:
 
     var config = require('nw-builder').config;
 
@@ -121,7 +121,7 @@ will change v1.2.4 to v1.3.0 and run v1.3.0.
 
 ## Execution script
 
-There is another file `run.json` created by first `make`:
+There is another file - `run.json` - created by first `make`:
 
     {
         "sequence": [
@@ -153,7 +153,7 @@ binary. Example exclude string for Windows with 7z:
 
     -xr!*.swp -xr!%.gitignore
 
-You can replace it in config.json hash:
+You can replace it in `config.json`:
 
     "exclude": "new exclude string"
 
@@ -181,6 +181,8 @@ add them to `exclude` property.
 
 Files/directories in lists must be separated by a space. If
 any filename contains space character, escape it with `\`.
+
+Commands (except `shell`) are not OS specific.
 
 1. `cp` - copy list of files/directories (including subdirectories)
 
@@ -234,7 +236,7 @@ You can access `nw-builder` module in your application:
 
     var Builder = require('nw-builder');
 
-or by accessing its methods and properties directly:
+or access its properties directly:
 
     var config = require('nw-builder').config;
 
@@ -246,6 +248,4 @@ or by accessing its methods and properties directly:
 3. `name` (STRING) - contains content of `name` property from `config.json';
 4. `appname` (STRING) - name of application executable file;
 5. `cwd` (STRING) - path to directory containing application.
-
-### Methods
 
